@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>Alarm Clock</title>
+    <link rel="stylesheet" type="text/css" href="src/styles.css" />
+    <link rel="shortcut icon" href="media/favicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="main-container">
+      <div class="clock sub-container">
+        <div class="time" id="timeDisplay">12:00:00 AM</div>
+        <div class="time" id="dateDisplay">12:00:00 AM</div>
+      </div>
+      <div id="set-alarm-container" class="sub-container">
+        <h3>Set Alarm</h3>
+        <div class="alarm-form">
+          <input
+            type="number"
+            id="hourInput"
+            placeholder="Hour"
+            min="1"
+            max="12"
+          />
+          <input
+            type="number"
+            id="minuteInput"
+            placeholder="Minute"
+            min="0"
+            max="59"
+          />
+          <input
+            type="number"
+            id="secondInput"
+            placeholder="Second"
+            min="0"
+            max="59"
+          />
+
+          <select id="ampmInput">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+        </div>
+        <div id="buttons">
+          <button onclick="setAlarm()">Set Alarm</button>
+          <button
+            id="dismissButton"
+            onclick="dismissAlarm()"
+            style="display: none"
+          >
+            Dismiss Alarm
+          </button>
+        </div>
+      </div>
+      <div id="recent-alarms" class="sub-container">
+        <h3>Recent Alarms</h3>
+        <div class="alarms" id="alarmsList">
+          <!-- Alarm items will be added here -->
+        </div>
+      </div>
+
+      <!-- Audio element for the alarm sound -->
+      <audio id="alarmSound" src="media/asus-alarm-ringdd.com.mp3"></audio>
+      <!-- Dismiss button for the alarm sound -->
+    </div>
+
+    <script src="src/script.js"> </script>
+  </body>
+</html>
